@@ -1,0 +1,19 @@
+.footer {
+    width: auto;
+    height: auto;
+    margin-left: 225px;
+    background-color: var(--color-theme);
+    color: whitesmoke;
+
+    h1 {
+        font-size: 16px;
+        margin-left: 15px;
+        padding: 0;
+    }
+
+    p {
+        font-size: 12px;
+        margin-left: 15px;
+        padding: 0;
+    }
+}
