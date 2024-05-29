@@ -1,10 +1,10 @@
 export const environment = {
-    firebaseConfig : {
-        apiKey: "AIzaSyBUeKxJtnt2EsqA0YubPEG6nTo6HGepMF8",
-        authDomain: "carstore-3b6cc.firebaseapp.com",
-        projectId: "carstore-3b6cc",
-        storageBucket: "carstore-3b6cc.appspot.com",
-        messagingSenderId: "736936475163",
-        appId: "1:736936475163:web:561600d2d7e1e7475716be"
-      }
+  firebaseConfig: {
+    apiKey: "AIzaSyD0Y5VFm_NA8YuFYjDEJnEYFjLFX-Pd9n8",
+    authDomain: "crud-carstore.firebaseapp.com",
+    projectId: "crud-carstore",
+    storageBucket: "crud-carstore.appspot.com",
+    messagingSenderId: "300611211111",
+    appId: "1:300611211111:web:d54813fab96662fb7629c2"
+  }
 };
