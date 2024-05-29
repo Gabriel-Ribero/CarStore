@@ -1,0 +1,61 @@
+<div class="body">
+    <div class="container-fluid p-3">
+        <mat-icon class="float-end hover" (click)="closeModal()">close</mat-icon>
+    
+        <h1 class="titulo">Inclusão de Peça</h1>
+    
+        <form action="" class="row" [formGroup]="formPecas">
+    
+            <!--Campo de Código-->
+            <div class="col12 col-md-6 mb-2">
+                <mat-form-field class="example-full-with w-100">
+                    <mat-label>Código</mat-label>
+                    <input type="text" matInput formControlName="codigo" placeholder="Digite o código da peça...">
+                    @if (formPecas.controls["codigo"].invalid) {
+                      <mat-error>Informe um código válido</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+    
+            <!--Campo de Nome-->
+            <div class="col12 col-md-6 mb-2">
+                <mat-form-field class="example-full-with w-100">
+                    <mat-label>Peça</mat-label>
+                    <input type="text" matInput formControlName="nome" placeholder="Digite uma matéria...">
+                    @if (formPecas.controls["nome"].invalid) {
+                        <mat-error>Informe um nome válido</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+    
+            <!--Campo de Descrição-->
+            <div class="col12 col-md-6 mb-2">
+                <mat-form-field class="example-full-with w-100">
+                    <mat-label>Descrição</mat-label>
+                    <input type="text" matInput formControlName="descricao" placeholder="Digite a descição da peça...">
+                    @if (formPecas.controls["descricao"].invalid) {
+                      <mat-error>Informe uma descrição valido</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+    
+            <!--Campo de Valor-->
+            <div class="col12 col-md-6 mb-2">
+                <mat-form-field class="example-full-with w-100">
+                    <mat-label>Valor R$</mat-label>
+                    <input type="number" matInput formControlName="valor" placeholder="Informe o valor da peça...">
+                    @if (formPecas.controls["valor"].invalid) {
+                      <mat-error>Informe um valor valido</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+    
+            <div class="col-12">
+                <button class="botao float-end" [disabled]="!formPecas.valid" (click)="save()">Salvar</button>
+                <button class="botao float-end" [disabled]="!formPecas.valid" (click)="closeModal()">Cancelar</button>
+            </div>
+    
+        </form>
+    
+    </div>
+</div>
