@@ -1,7 +1,8 @@
 .footer {
-    width: auto;
+    width: 100%;
     height: auto;
-    margin-left: 225px;
+    position:sticky;
+    bottom: 0;
     background-color: var(--color-theme);
     color: whitesmoke;
 
@@ -15,5 +16,9 @@
         font-size: 12px;
         margin-left: 15px;
         padding: 0;
+    }
+
+    .descricao {
+        text-align: center;
     }
 }

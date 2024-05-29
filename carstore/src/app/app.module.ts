@@ -1,47 +1,62 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MatIconModule } from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HomeComponent } from './pages/home/home.component';
+
 import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ButtonComponent } from './components/button/button.component';
+import { HomeComponent } from './pages/home/home.component';
+import { Page1Component } from './pages/page1/page1.component';
 import { Page3Component } from './pages/page3/page3.component';
+import { ModelFormPecaComponent } from './pages/page1/model-form-peca/model-form-peca.component';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment.development';
-import { Page1Component } from './pages/page1/page1.component';
-import { ModalViewPecasComponent } from './pages/page1/modal-view-pecas/modal-view-pecas.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule} from '@angular/material/sort';
 import { MatTableModule} from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
+    AppComponent,  
     MenuComponent,
     FooterComponent,
-    Page3Component,
+    ButtonComponent,
+    HomeComponent,
     Page1Component,
-    ModalViewPecasComponent
+    Page3Component,
+    ModelFormPecaComponent
   ],
-  imports: [
-    BrowserModule,
+  imports: [  
     AppRoutingModule,
-    MatIconModule,
+    
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    MatDialogModule,
+
+    FormsModule, ReactiveFormsModule,
+    BrowserModule,
+
+    MatIconModule,
+    MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    MatTableModule, 
     MatSortModule,
-    MatDialogModule,
+    MatTableModule, 
+    MatDialogModule
   ],
   providers: [
-    provideAnimationsAsync(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

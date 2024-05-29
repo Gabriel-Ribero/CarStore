@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalViewPecasComponent } from './modal-view-pecas.component';
+import { ModelFormPecaComponent } from './model-form-peca.component';
 
-describe('ModalViewPecasComponent', () => {
-  let component: ModalViewPecasComponent;
-  let fixture: ComponentFixture<ModalViewPecasComponent>;
+describe('ModelFormPecaComponent', () => {
+  let component: ModelFormPecaComponent;
+  let fixture: ComponentFixture<ModelFormPecaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ModalViewPecasComponent]
+      declarations: [ModelFormPecaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ModalViewPecasComponent);
+    fixture = TestBed.createComponent(ModelFormPecaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
