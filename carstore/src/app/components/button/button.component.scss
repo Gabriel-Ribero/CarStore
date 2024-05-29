@@ -1,0 +1,21 @@
+.botao {
+    width: auto;
+    outline: none;
+    border: 0;
+    background-color: var(--color-theme);
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 6px 20px;
+    transition: 0.3s linear all;
+    &:hover {
+        cursor: pointer;
+        background-color: whitesmoke;
+        color: black;
+        font-weight: bold;
+    }
+    &:disabled {
+        cursor: default;
+        opacity: 0.7;
+    }
+}

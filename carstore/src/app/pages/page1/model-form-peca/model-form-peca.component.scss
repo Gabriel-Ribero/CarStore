@@ -1,0 +1,42 @@
+.body {
+    background-color: whitesmoke;
+
+    .titulo {
+        font-size: 26px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0 0 10px 0;
+        color: var(--color-theme);
+    }
+    
+    .subtitulo {
+        font-size: 16px;
+        font-weight: 300;
+        padding: 2px 0px 14px 0px;
+        margin: 0;
+        color: var(--gray-color);
+    }
+    
+    .botao {
+        width: auto;
+        outline: none;
+        border: 0;
+        background-color: var(--color-theme);
+        color: whitesmoke;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 6px 20px;
+        margin-right: 4px;
+        transition: 0.3s linear all;
+        &:hover {
+            cursor: pointer;
+            background-color: whitesmoke;
+            color: black;
+            font-weight: bold;
+        }
+        &:disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,57 +1,72 @@
+<app-menu></app-menu>
 
-<div class="container-fluid pt-3">
+<div class="body">
+  <div class="container-fluid pt-3">
     <div class="row">
         <div class="col-12">
-            <h1 class="titulo">Cadastro de matérias</h1>
-            <!--<h2 class="subtitulo">Gerencie as matérias, adicionando, editando ou excluindo</h2>-->
+            <h1 class="titulo">Cadastro de Peças</h1>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12">
-            <!--<app-button class="float-end mt-2" textButton="+ Cadastrar" (click)="openModalAddMateria()" ></app-button>-->
+      <div class="col-11" style="margin-left: 15px;">
+          
+        <!--Incluir Peça-->
+        <app-button class="float-end mt-2" textButton="Incluir" (click)="openModalFormPeca()"></app-button>
 
-            <mat-form-field>
-                <mat-label>Busca por Peças</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Filtro..." #input>
-            </mat-form-field>
+        <!--Filtro-->
+        <mat-form-field>
+            <mat-label>Buscar Peça</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Digite o nome..." #input>
+        </mat-form-field>
 
-            <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+        <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+        
+          <!--Coluna Código-->
+          <ng-container matColumnDef="codigo">
+            <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+            <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.codigo}} </td>
+          </ng-container>
 
-                <ng-container matColumnDef="id">
-                  <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-                  <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.firebaseId}} </td>
-                </ng-container>
-            
-                <ng-container matColumnDef="nome">
-                  <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-                  <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.nome}} </td>
-                </ng-container>
-            
-                <ng-container matColumnDef="codigo">
-                  <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
-                  <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.codigo}} </td>
-                </ng-container>
-            
-                <ng-container matColumnDef="descricao">
-                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
-                    <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.descricao}} </td>
-                </ng-container>
+          <!--Coluna Nome-->
+          <ng-container matColumnDef="nome">
+            <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+            <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.nome}} </td>
+          </ng-container>
 
-                <ng-container matColumnDef="valor">
-                    <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Valor R$ </th>
-                    <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.valor}} </td>
-                </ng-container>
+          <!--Coluna Descrição-->
+          <ng-container matColumnDef="descricao">
+              <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+              <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.descricao}} </td>
+          </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            
-                <tr class="mat-row" *matNoDataRow>
-                  <td class="mat-cell no-data" colspan="4">Não foram encontrados dados de acordo com a pesquisa: "{{input.value}}"</td>
-                </tr>
-            </table>
-            
-              <mat-paginator class="shadow-sm" [pageSizeOptions]="[3, 5, 7]" aria-label="Selecione peças por página"></mat-paginator>
-        </div>
+          <!--Coluna Valor-->
+          <ng-container matColumnDef="valor">
+              <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Valor R$ </th>
+              <td class="td-table" mat-cell *matCellDef="let pecas"> {{pecas.valor}} </td>
+          </ng-container>
+
+          <!--Coluna Alterar e Excluir-->
+          <ng-container matColumnDef="actions">
+            <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td class="td-table" mat-cell *matCellDef="let pecas">
+                <mat-icon class="icone-tabela" (click)="openModalEditPeca(pecas)">edit</mat-icon>
+                <mat-icon class="icone-tabela" (click)="deletePeca(pecas.firebaseId)">delete</mat-icon>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell no-data" colspan="4">Não foram encontrados dados de acordo com a pesquisa: "{{input.value}}"</td>
+          </tr>
+        </table>
+          
+        <mat-paginator class="shadow-sm" [pageSizeOptions]="[3, 5, 7]" aria-label="Selecione peças por página"></mat-paginator>
+      </div>
     </div>
+  </div>
 </div>
+
+<app-footer></app-footer>
