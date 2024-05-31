@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalViewCarrosComponent } from './modal-view-carros.component';
+import { ModalFormCarrosComponent } from './modal-form-carros.component';
 
-describe('ModalViewCarrosComponent', () => {
-  let component: ModalViewCarrosComponent;
-  let fixture: ComponentFixture<ModalViewCarrosComponent>;
+describe('ModalFormCarrosComponent', () => {
+  let component: ModalFormCarrosComponent;
+  let fixture: ComponentFixture<ModalFormCarrosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ModalViewCarrosComponent]
+      declarations: [ModalFormCarrosComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ModalViewCarrosComponent);
+    fixture = TestBed.createComponent(ModalFormCarrosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

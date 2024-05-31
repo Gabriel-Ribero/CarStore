@@ -48,3 +48,48 @@ tr { height: 40px; }
         transform: rotate(359deg);
     }
 }
+
+.body {
+    width: auto;
+    height:100%;
+    margin-left: 225px;
+    background-color: black;
+
+    .titulo {
+        font-size: 26px;
+        font-weight: bold;
+        padding: 0;
+        margin-left: 15px;
+        color: whitesmoke;
+    }
+
+    .no-data {
+        padding: 8px 14px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    tr { height: 40px; }
+
+    .th-table {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        background-color: white;
+    }
+
+    .td-table {
+        font-size: 12px;
+        font-weight: 300;
+        color: black;
+    }
+
+    .icone-tabela {
+        color: var(--color-theme);
+        transition: 0.3s linear all;
+        &:hover {
+            cursor: pointer;
+            transform:scale(1.3);
+        }
+    }
+}

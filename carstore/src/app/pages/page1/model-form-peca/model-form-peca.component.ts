@@ -16,10 +16,9 @@ export class ModelFormPecaComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<ModelFormPecaComponent>,
     private formBuilder: FormBuilder,
-    private pecasService: PecasService) 
-    {
+    private pecasService: PecasService) {
 
-    }
+  }
 
   ngOnInit() {
     this.buildForm();
@@ -48,24 +47,24 @@ export class ModelFormPecaComponent {
   }
 
   save() {
-    const model : Pecas = this.formPecas.getRawValue();
+    const model: Pecas = this.formPecas.getRawValue();
 
     if (this.data && this.data.nome) {
       this.pecasService.update(this.data.firebaseId, model)
-      .then((response : any) => {
-        window.alert('Peça alterada com sucesso.');
-        this.closeModal();
-      })
+        .then((response: any) => {
+          window.alert('Peça alterada com sucesso.');
+          this.closeModal();
+        })
     }
     else {
       this.pecasService.create(model)
-      .then((response : any) => {
-        window.alert('Peça incluida com sucesso.');
-        this.closeModal();
-      })
+        .then((response: any) => {
+          window.alert('Peça incluida com sucesso.');
+          this.closeModal();
+        })
     }
 
   }
 
-  closeModal() {this.dialogRef.close();}
+  closeModal() { this.dialogRef.close(); }
 }

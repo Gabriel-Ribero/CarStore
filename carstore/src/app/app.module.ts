@@ -21,27 +21,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatPaginatorModule} from '@angular/material/paginator';
-import { MatSortModule} from '@angular/material/sort';
-import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalFormCarrosComponent } from './pages/page3/modal-form-carros/modal-form-carros.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
     MenuComponent,
     FooterComponent,
     ButtonComponent,
     HomeComponent,
     Page1Component,
     Page3Component,
-    ModelFormPecaComponent
+    ModelFormPecaComponent,
+    ModalFormCarrosComponent
   ],
-  imports: [  
+  imports: [
     AppRoutingModule,
-    
+
     AngularFireModule.initializeApp(environment.firebaseConfig),
 
     FormsModule, ReactiveFormsModule,
@@ -52,7 +54,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule, 
+    MatTableModule,
     MatDialogModule
   ],
   providers: [

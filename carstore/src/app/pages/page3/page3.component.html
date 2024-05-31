@@ -1,6 +1,71 @@
 <app-menu></app-menu>
+<div class="body">
+    <div class="container-fluid pt-3">
+      <div class="row">
+          <div class="col-12">
+              <h1 class="titulo">Cadastro de Carros</h1>
+          </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-11" style="margin-left: 15px;">
+            
+          <!--Incluir Carro-->
+          <app-button class="float-end mt-2" textButton="Incluir" (click)="openModalFormCarros()"></app-button>
+  
+          <!--Filtro-->
+          <mat-form-field>
+              <mat-label>Buscar Carro</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Digite o Modelo..." #input>
+          </mat-form-field>
 
-<app-button textButton="Iniciar" routerLink="/crud"></app-button>
-
+          <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+          
+            <!--Coluna Km-->
+            <ng-container matColumnDef="Km">
+              <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Km </th>
+              <td class="td-table" mat-cell *matCellDef="let carros"> {{carros.Km}} </td>
+            </ng-container>
+  
+            <!--Coluna Modelo-->
+            <ng-container matColumnDef="Modelo">
+              <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+              <td class="td-table" mat-cell *matCellDef="let carros"> {{carros.Modelo}} </td>
+            </ng-container>
+  
+            <!--Coluna Marca-->
+            <ng-container matColumnDef="Marca">
+                <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Marca </th>
+                <td class="td-table" mat-cell *matCellDef="let carros"> {{carros.Marca}} </td>
+            </ng-container>
+  
+            <!--Coluna Valor-->
+            <ng-container matColumnDef="valor">
+                <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header> Valor R$ </th>
+                <td class="td-table" mat-cell *matCellDef="let carros"> {{carros.Valor}} </td>
+            </ng-container>
+  
+            <!--Coluna Alterar e Excluir-->
+            <ng-container matColumnDef="actions">
+              <th class="th-table" mat-header-cell *matHeaderCellDef mat-sort-header></th>
+              <td class="td-table" mat-cell *matCellDef="let carros">
+                  <mat-icon class="icone-tabela" (click)="openModalEditCarro(carros)">edit</mat-icon>
+                  <mat-icon class="icone-tabela" (click)="deleteCarro(carros.firebaseId)">delete</mat-icon>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell no-data" colspan="4">Não foram encontrados dados de acordo com a pesquisa: "{{input.value}}"</td>
+            </tr>
+          </table>
+            
+          <mat-paginator class="shadow-sm" [pageSizeOptions]="[3, 5, 7]" aria-label="Selecione carro por página"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <app-footer></app-footer>
